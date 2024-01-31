@@ -8,7 +8,7 @@ with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
 
-st.title("💬 Py Asssitant")
+st.title("💬 Py Assitant")
 st.caption("🚀 Talk your way through your Python code!")
 
 model = st.radio(
@@ -22,7 +22,7 @@ INITIAL_MESSAGE = [
     {"role": "user", "content": "Hi!"},
     {
         "role": "assistant",
-        "content": "Hey there, I'm your Python-speaking coding asssistant, ready to answer your questions regarding Python code!💻",
+        "content": "Hey there, I'm your Python-speaking coding assistant, ready to answer your questions regarding Python code!💻",
     },
 ]
 
