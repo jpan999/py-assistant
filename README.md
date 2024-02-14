@@ -22,9 +22,10 @@ Sprint 1:
 Sprint 2:
 * Progress & Contributions:
     * Tess: 
-    1) Built the page "Code_Translation.py" that allows users to upload code files or chat with LLM for code translation into Java, C++, JavaScript, or Go. Specifically, this page will execute a two-step process based on user input. First, it will run a pre-check to make sure that the provided Python code is suitable for translating into the target language. If so, it will then proceed with the translation. Otherwise, it will end the process.
+    1) Built the "Code_Translation.py" page, designed to enable users to either upload code files or interact with a LLM to translate Python code into Java, C++, JavaScript, or Go. Specifically, this page will execute a two-step process based on user input. First, it will run a pre-check to make sure that the provided Python code is suitable for translating into the target language. If the code is deemed suitable, the translation process is initiated. Otherwise, the process will be halted.
     2) Modified the page "LLM Chatbot.py" so that it will first classify user prompt into code generation, code summarization, or code translation. Then, the chatbot will proceed with the identified coding task.
     3) Future plan: Tess will further enrich the LLM Chatbot page so that it will support more sophisticated functionality based on the identified task. Tess will also modify the file upload section in the Code_Summarization.py page to enable RAG functionality, so that the app will retrieve relevant information from the uploaded file and generate more precise answers.
+    
     * Joyce:
 
 * Testing Instruction:
