@@ -35,8 +35,7 @@ if mode_encode[input_mode] == 0:
         },
     ]
 
-    if "messages" not in st.session_state:
-        st.session_state["messages"] = INITIAL_MESSAGE
+    st.session_state["messages"] = INITIAL_MESSAGE
 
     if "model" not in st.session_state:
         st.session_state["model"] = model
