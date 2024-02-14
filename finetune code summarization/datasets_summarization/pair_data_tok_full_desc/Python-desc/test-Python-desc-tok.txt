@@ -1,0 +1,887 @@
+Minimum sum possible by removing all occurrences of any array element
+Maximum difference between a pair of adjacent elements by excluding every element once
+Count 1 s present in a range of indices [ L , R ] in a given array
+Find the pair ( a , b ) with minimum LCM such that their sum is equal to N
+Find Landau 's function for a given number N
+Check if the remainder of N
+Check if it is possible to split given Array into K odd
+Sum of division of the possible pairs for the given Array
+Count of elements to be inserted to make Array sum twice the XOR of Array
+Check if roots of a Quadratic Equation are reciprocal of each other or not
+Sunny Number
+Count the numbers which can convert N to 1 using given operation
+Find K numbers with sum equal to N and sum of their squares maximized
+Print Nth Stepping or Autobiographical number
+Least number to be added to or subtracted from N to make it a Perfect Square
+Value of Pi ( Î ) up to 50 decimal places
+Invert the Kth most significant bit of N
+Queries for the product of first N factorials
+Nth number in a set of multiples of A , B or C
+Angle between 3 given vertices in a n
+Loss when two items are sold at same price and same percentage profit / loss
+Check for an array element that is co
+Ways to Remove Edges from a Complete Graph to make Odd Edges
+Calculate nCr using Pascal 's Triangle
+Closest sum partition ( into two subsets ) of numbers from 1 to n
+Check if the Xor of the frequency of all digits of a number N is zero or not
+Print N lines of 4 numbers such that every pair among 4 numbers has a GCD K
+Sum of first n term of Series 3 , 5 , 9 , 17 , 33. ...
+Count the number of Special Strings of a given length N
+Counts Path in an Array
+Counts Path in an Array
+Number of Subsequences with Even and Odd Sum
+Count of integers of length N and value less than K such that they contain digits only from the given set
+Number of Paths of Weight W in a K
+Ways to write N as sum of two or more positive integers | Set
+Longest Increasing Path in Matrix
+Counts paths from a point to reach Origin
+Gold Mine Problem
+Find minimum adjustment cost of an array
+Count triplets from a given range having sum of two numbers of a triplet equal to the third number
+Construct two N
+Numbers formed by flipping common set bits in two given integers
+Count of distinct pair sum between two 1 to N value Arrays
+Count of substrings from given Ternary strings containing characters at least once
+Minimum flips to remove any consecutive 3 0 s or 1 s in given Binary string
+Encrypt the string
+Count of Binary Strings of length N such that frequency of 1 ' s ▁ exceeds ▁ frequency ▁ of ▁ 0' s
+Remove all occurrences of a character in a string | Recursive approach
+Maximum time such that absolute difference between hour and minute lies in given range
+Check if a string can be split into even length palindromic substrings
+Number of strings in two array satisfy the given conditions
+Maximize the decimal equivalent by flipping only a contiguous set of 0 s
+Sentence Case of a given Camel cased string
+Count occurrences of a character in a repeated string
+Frequency Measuring Techniques for Competitive Programming
+Check if a string has m consecutive 1 ' s ▁ or ▁ 0' s
+Product of nodes at k
+Removing row or column wise duplicates from matrix of characters
+Program to check for ISBN
+Reverse vowels in a given string
+String containing first letter of every word in a given string with spaces
+Unique paths covering every non
+Count of unordered pairs ( x , y ) of Array which satisfy given equation
+Area of a Square | Using Side , Diagonal and Perimeter
+Maximum points of intersections possible among X circles and Y straight lines
+Icosihenagonal Number
+Find the centroid of a non
+Program to find the angles of a quadrilateral
+Distance between two parallel Planes in 3
+Count of ways to form 2 necklace from N beads containing N / 2 beads each
+Check if a number S can be made divisible by D by repeatedly adding the remainder to S
+Minimum number of given moves required to reach ( 1 , 1 ) from ( X , Y )
+Minimum number of bracket reversals needed to make an expression balanced
+Form minimum number from given sequence
+Form minimum number from given sequence
+Form minimum number from given sequence
+Form minimum number from given sequence
+Check if the first and last digit of the smallest number forms a prime
+Finding a Non Transitive Co
+Reach A and B by multiplying them with K and K ^ 2 at every step
+Undulating numbers
+Program to find the sum of a Series ( 1 * 1 ) + ( 2 * 2 ) + ( 3 * 3 ) + ( 4 * 4 ) + ( 5 * 5 ) + ... + ( n * n )
+Count numbers with unit digit k in given range
+Sum of all numbers divisible by 6 in a given range
+Largest smaller number possible using only one swap operation
+Sgn value of a polynomial
+Insert minimum number in array so that sum of array becomes prime
+Sum of all Subarrays | Set 1
+Highest power of 2 less than or equal to given number
+Find ( a ^ b ) % m where ' a ' is very large
+Lagrange 's Interpolation
+Sieve of Sundaram to print all primes smaller than n
+Construct original array starting with K from an array of XOR of all elements except elements at same index
+Find extra element in the second array
+Hamming distance between two Integers
+Print bitwise AND set of a number N
+Find most significant set bit of a number
+Minimum number of subsets with distinct elements
+Minimum number of subsets with distinct elements
+Count ways to represent a number as sum of perfect squares
+Sum of distances of all nodes from a given node
+Rearrange array such that sum of same indexed elements is atmost K
+Count rows with sum exceeding sum of the remaining Matrix
+Check if array contains contiguous integers with duplicates allowed
+Check if array contains contiguous integers with duplicates allowed
+Check if array contains contiguous integers with duplicates allowed
+Longest subarray not having more than K distinct elements
+Check if any K ranges overlap at any point
+Find smallest range containing elements from k lists
+Find largest d in array such that a + b + c = d
+Find largest d in array such that a + b + c = d
+Maximize count of elements that can be selected having minimum difference between their sum and K
+Program for array rotation
+Sort the array in a given index range
+Sorting rows of matrix in descending order followed by columns in ascending order
+Move all zeroes to end of array
+Move all zeroes to end of array | Set
+Double the first element and move zero to end
+Double the first element and move zero to end
+Rearrange positive and negative numbers with constant extra space
+Rearrange positive and negative numbers with constant extra space
+Rearrange positive and negative numbers with constant extra space
+Find the player to be able to replace the last element that can be replaced by its divisors
+Queries to calculate sum of array elements present at every Yth index starting from the index X
+Find all elements in array which have at
+Find all elements in array which have at
+Find all elements in array which have at
+Minimize count of increments of each element of subarrays required to make Array non
+Find the smallest missing number
+Find the smallest missing number
+Maximum sum such that no two elements are adjacent
+Minimum steps to convert all top left to bottom right paths in Matrix as palindrome | Set 2
+Sparse Table
+Sparse Table
+Lexicographically smallest array after at
+Find maximum average subarray of k length
+Find maximum average subarray of k length
+Minimum score possible for a player by selecting one or two consecutive array elements from given binary array
+Sum of prime numbers in range [ L , R ] from given Array for Q queries
+Count the number of ways to construct the target string
+Count of integers from the range [ 0 , N ] whose digit sum is a multiple of K
+Double Knapsack | Dynamic Programming
+Lexicographically largest prime path from top
+Maximum size subset with given sum
+Print all longest common sub
+Check for Majority Element in a sorted array
+Check for Majority Element in a sorted array
+Check for Majority Element in a sorted array
+Cutting a Rod | DP
+Modify array to another given array by replacing array elements with the sum of the array
+Sum of all products of the Binomial Coefficients of two numbers up to K
+Check if N can be obtained from 1 by repetitively multiplying by 10 or 20
+Central polygonal numbers
+Program to print the series 1 , 3 , 4 , 8 , 15 , 27 , 50 â €¦ till N terms
+Diameter of a Binary Indexed Tree with N nodes
+Find the larger exponential among two exponentials
+Sum of prime numbers without odd prime digits
+Count the number of primes in the prefix sum array of the given array
+Minimum value to be added to X such that it is at least Y percent of N
+Check if N is a Factorial Prime
+Seating arrangement of n boys and girls alternatively around a round table
+Check whether the given number is Euclid Number or not
+Perfect cube greater than a given number
+Sum of all the prime divisors of a number
+Position of n among the numbers made of 2 , 3 , 5 & 7
+Finding a Non Transitive Co
+Count n digit numbers not having a particular digit
+Check if given number is Emirp Number or not
+Program to Convert Radian to Degree
+Find trace of matrix formed by adding Row
+Maximum of smallest possible area that can get with exactly k cut of given rectangular
+Program to find the area of a Square
+Count ways to express a number as sum of consecutive numbers
+Automorphic Number
+Number with maximum number of prime factors
+Find Square Root under Modulo p | Set 1 ( When p is in form of 4 * i + 3 )
+Primality Test | Set 3 ( Millerâ €“ Rabin )
+Length of the Longest Consecutive 1 s in Binary Representation
+Subtract two numbers without using arithmetic operators
+Subtract two numbers without using arithmetic operators
+Kth ancestor of all nodes in an N
+Queries to count array elements greater than or equal to a given number with updates
+Minimize Array length by repeatedly replacing co
+Count of ways to split N into Triplets forming a Triangle
+Count of pairs having each element equal to index of the other from an Array
+Find length of longest Fibonacci like subsequence
+Maximize count of elements that can be selected having minimum difference between their sum and K
+Maximum types of candies a person can eat if only N / 2 of them can be eaten
+Length of diagonals of a Rhombus using length of Side and vertex Angle
+Count of even and odd set bit with array element after XOR with K
+Number of ways to choose a pair containing an even and an odd number from 1 to N
+Longest subsequence from an array of pairs having first element increasing and second element decreasing .
+Count triples with Bitwise AND equal to Zero
+Count ways to reach a score using 1 and 2 with no consecutive 2 s
+Find the last player to be able to flip a character in a Binary String
+Check if K palindromic strings can be formed from a given string
+Check if two strings are same ignoring their cases
+Program to print Step Pattern
+Frequency Measuring Techniques for Competitive Programming
+Check divisibility of binary string by 2 ^ k
+Check if any anagram of a string is palindrome or not
+Program to check if input is an integer or a string
+Print reverse of a string using recursion
+Probability of distributing given balls into two halves having equal count of distinct colors
+Area of a n
+Check if a line at 45 degree can divide the plane into two equal weight parts
+Slope of perpendicular to line
+Program to find area of a Circular Segment
+Area of a Circular Sector
+Make two numbers equal by multiplying with their prime factors minimum number of times
+Make given segments non
+Generate all numbers up to N in Lexicographical Order
+Minimum number of swaps required to sort an array of first N number
+Merge K sorted Doubly Linked List in Sorted Order
+Recursive Selection Sort
+Recursive Insertion Sort
+Maximum possible difference of sum of two subsets of an array | Set 2
+Split an array into subarrays with maximum Bitwise XOR of their respective Bitwise OR values
+Count number of common elements between a sorted array and a reverse sorted array
+Queries to count Palindrome Numbers from a range whose sum of digits is a Prime Number
+Smallest number greater than or equal to N having sum of digits not exceeding S
+Maximize count of Decreasing Consecutive Subsequences from an Array
+Remove the first and last occurrence of a given Character from a String
+Minimum steps for increasing and decreasing Array to reach either 0 or N
+Minimum number of adjacent swaps required to convert a permutation to another permutation by given condition
+Count of interesting primes upto N
+Check if an array is Wave Array
+Count distinct sequences obtained by replacing all elements of subarrays having equal first and last elements with the first element any number of times
+Maximum sum possible from given Matrix by performing given operations
+Maximum sum possible from given Matrix by performing given operations
+Count unimodal and non
+Largest Square in a Binary Matrix with at most K 1 s for multiple Queries
+Largest Square in a Binary Matrix with at most K 1 s for multiple Queries
+N consecutive ropes problem
+Length of the longest subsegment which is UpDown after inserting atmost one integer
+Remove an element to maximize the GCD of the given array
+Maximum subarray sum by flipping signs of at most K array elements
+Find the sum of first N odd Fibonacci numbers
+Minimize the total number of teddies to be distributed
+Number of ways to reach Nth floor by taking at
+Find the Longest Increasing Subsequence in Circular manner
+Counts paths from a point to reach Origin
+Longest Common Increasing Subsequence ( LCS + LIS )
+Length of longest common prefix possible by rearranging strings in a given array
+Remove characters from a String that appears exactly K times
+Contiguous subsegments of a string having distinct subsequent characters
+Program to find the Encrypted word
+Check if two strings are same ignoring their cases
+Maximize the value of A by replacing some of its digits with digits of B
+Count numbers in range such that digits in it and it 's product with q are unequal
+Check if it is possible to rearrange a binary string with alternate 0 s and 1 s
+Frequency Measuring Techniques for Competitive Programming
+Count of even and odd set bit with array element after XOR with K
+gOOGLE cASE of a given sentence
+Program to find the N
+Nth non
+Sum of series with alternate signed squares of AP
+Find nth number that contains the digit k or divisible by k .
+Count of subarrays of size K which is a permutation of numbers from 1 to K
+Count of integers that divide all the elements of the given array
+Minimize cost of removals required to make all remaining characters of the string unique
+Make all array elements equal by replacing triplets with their Bitwise XOR
+Make all array elements even by replacing adjacent pair of array elements with their sum
+Find a number K such that exactly K array elements are greater than or equal to K
+Lexicographically smallest and largest anagrams of a string containing another string as its substring
+Queries to find the count of shortest paths in a Tree that contains a given edge
+Count of permutations of an Array having each element as a multiple or a factor of its index
+Check if sum Y can be obtained from the Array by the given operations
+Farthest distance of a Node from each Node of a Tree
+Middle of three using minimum comparisons
+Difference between Insertion sort and Selection sort
+Check if a given string can be converted to another by given possible swaps
+Sort the array in a given index range
+Find the minimum cost to reach destination using a train
+Number of loops of size k starting from a specific node
+Program to find the largest and smallest ASCII valued characters in a string
+Make largest palindrome by changing at most K
+Count triples with Bitwise AND equal to Zero
+Minimize the count of adjacent pairs with different parity
+Find triplet such that number of nodes connecting these triplets is maximum
+Percentage increase in volume of the sphere if radius is increased by a given percentage
+Length of the chord of the circle whose radius and the angle subtended at the center by the chord is given
+Area of a square inscribed in a circle which is inscribed in an equilateral triangle
+Length of longest rod that can fit into a cuboid
+Check whether a given point lies on or inside the rectangle | Set 3
+Maximize volume of cuboid with given sum of sides
+Maximize volume of cuboid with given sum of sides
+Area of a Hexagon
+Maximum number of squares that can fit in a right angle isosceles triangle
+Check if right triangle possible from given area and hypotenuse
+Maximum number of 2 x2 squares that can be fit inside a right isosceles triangle
+Bitwise OR of bitwise AND of all possible non
+Smallest length of number divisible by K formed by using D only
+Fibonacci Cube Graph
+Modify array such that the array does not contain any common divisors other than 1
+Sort the biotonic doubly linked list
+Arrange consonants and vowels nodes in a linked list
+K 'th Largest element in BST using constant extra space
+Sorting rows of matrix in ascending order followed by columns in descending order
+Sort the matrix row
+Magic Square | Even Order
+Kronecker Product of two matrices
+Program to check if matrix is lower triangular
+Program to check if matrix is upper triangular
+Counting sets of 1 s and 0 s in a binary matrix
+Program to check if a matrix is symmetric
+Program to check if a matrix is symmetric
+Program to find Normal and Trace of a matrix
+Maximum determinant of a matrix with every values either 0 or n
+Count Negative Numbers in a Column
+Count Negative Numbers in a Column
+Count Negative Numbers in a Column
+Find a specific pair in Matrix
+Find a specific pair in Matrix
+Print all elements in sorted order from row and column wise sorted matrix
+Given an n x n square matrix , find sum of all sub
+Given an n x n square matrix , find sum of all sub
+Program to find transpose of a matrix
+Program to find transpose of a matrix
+Number of paths with exactly k coins
+Number of paths with exactly k coins
+Sort the given matrix
+Bubble Sort
+Find k closest elements to a given value
+Insertion Sort for Singly Linked List
+Coin Change | DP
+Coin Change | DP
+Matrix Chain Multiplication | DP
+Matrix Chain Multiplication | DP
+Cutting a Rod | DP
+Cutting a Rod | DP
+Multiply two integers without using multiplication , division and bitwise operators , and no loops
+Sieve of Eratosthenes
+Pascal 's Triangle
+Pascal 's Triangle
+Pascal 's Triangle
+Add two numbers without using arithmetic operators
+Add two numbers without using arithmetic operators
+Compute modulus division by a power
+Count set bits in an integer
+Count set bits in an integer
+Count set bits in an integer
+Count set bits in an integer
+Count set bits in an integer
+Count set bits in an integer
+Program to find parity
+Program to find whether a no is power of two
+Program to find whether a no is power of two
+Program to find whether a no is power of two
+Program to find whether a no is power of two
+Find the maximum repeating number in O ( n ) time and O ( 1 ) extra space
+Range Query on array whose each element is XOR of index value and previous element
+Queries on XOR of greatest odd divisor of the range
+Minimum adjacent swaps required to Sort Binary array
+Minimum adjacent swaps required to Sort Binary array
+Program to check if an array is sorted or not ( Iterative and Recursive )
+Find the two numbers with odd occurrences in an unsorted array
+Find a pair with the given difference
+Find k maximum elements of array in original order
+Print n smallest elements from given array in their original order
+Check whether Arithmetic Progression can be formed from the given array
+Check whether Arithmetic Progression can be formed from the given array
+Count ways of choosing a pair with maximum difference
+Rearrange a given linked list in
+Rearrange a given linked list in
+Subtract Two Numbers represented as Linked Lists
+Insert node into the middle of the linked list
+Insertion Sort for Doubly Linked List
+Print all possible rotations of a given Array
+Find array sum using Bitwise OR after splitting given array in two halves after K circular shifts
+Maximize count of corresponding same elements in given Arrays by Rotation
+Print array after it is right rotated K times
+Sort a Rotated Sorted Array
+Sort a Rotated Sorted Array
+Left Rotation and Right Rotation of a String
+Search an Element in Doubly Circular Linked List
+Reverse a doubly circular linked list
+Sqrt ( or Square Root ) Decomposition | Set 2 ( LCA of Tree in O ( sqrt ( height ) ) time )
+Expected Number of Trials to get N Consecutive Heads
+Find and Count total factors of co
+Find Range Value of the Expression
+Find next greater element with no consecutive 1 in it 's binary representation
+Minimum given operations required to convert a given binary string to all 1 's
+Minimum deletions required such that any number X will occur exactly X times
+Concatenate strings in any order to get Maximum Number of " AB "
+Minimum operations to make sum of neighbouring elements <= X
+Find the repeating and the missing number using two equations
+Lexicographically smallest string with given string as prefix
+Rearrange Array to find K using Binary Search algorithm without sorting
+Minimize K to let Person A consume at least ceil ( N / ( M + 1 ) ) candies based on given rules
+Total time required to travel a path denoted by a given string
+Cost required to make all array elements equal to 1
+Find the peak index of a given array
+Given an array A [ ] and a number x , check for pair in A [ ] with sum as x | Set 2
+Smallest divisor of N closest to X
+Find a pair ( a , b ) such that Aa + Bb = N
+Count numbers from a given range that are not divisible by any of the array elements
+Minimum number of coins to be collected per hour to empty N piles in at most H hours
+Count distinct pairs with given sum
+Count distinct pairs with given sum
+Queries to find longest subsequence having no similar adjacent elements with updates
+Queries to find longest subsequence having no similar adjacent elements with updates
+Sum of absolute differences of indices of occurrences of each array element
+Convert vowels into upper case character in a given string
+Maximize number of days for which P chocolates can be distributed consecutively to N people
+Count subarrays having sum modulo K same as the length of the subarray
+Count subarrays having sum modulo K same as the length of the subarray
+Check if all substrings of length K of a Binary String has equal count of 0 s and 1 s
+Check if characters of a given string can be used to form any N equal strings
+Find the root of given non decreasing function between A and B
+Median of difference of all pairs from an Array
+Print all Strings from array A [ ] having all strings from array B [ ] as subsequence
+Closest pair in an Array such that one number is multiple of the other
+Print all numbers in given range having digits in strictly increasing order
+Find the missing number in unordered Arithmetic Progression
+Floor value Kth root of a number using Recursive Binary Search
+Count of subsets having sum of min and max element less than K
+Minimize the maximum difference of adjacent elements after at most K insertions
+Check if minimum element in array is less than or equals half of every other element
+Largest and smallest Fibonacci numbers in an Array
+Longest substring with K unique characters using Binary Search
+Largest area square in an array when elements can be shuffled
+Check duplicates in a stream of strings
+Count the triplets such that A [ i ] < B [ j ] < C [ k ]
+Cost to Balance the parentheses
+Middle of three using minimum comparisons
+Find four missing numbers in an array containing elements from 1 to N
+Permutation present at the middle of lexicographic ordering of permutations of at most length N made up integers up to K
+Remaining array element after repeated removal of the smallest element from pairs with absolute difference of 2 or 0
+Maximize count of subsets into which the given array can be split such that it satisfies the given condition
+Maximize sum of second minimums in all quadruples of a given array
+Difference between Insertion sort and Selection sort
+Count pairs ( i , j ) from given array such that i K * arr [ j ]
+Count pairs ( i , j ) from given array such that i K * arr [ j ]
+Minimize consecutive removals of elements of the same type to empty given array
+Rearrange given array such that no array element is same as its index
+Count minimum number of moves to front or end to sort an array
+Check if a string can be transformed to another by sorting substrings
+Check whether two strings can be made equal by reversing substring of equal length from both strings
+Sort a Bitonic Array
+Split array into K subsets to maximize their sum of maximums and minimums
+Minimize sum of smallest elements from K subsequences of length L
+Kth smallest or largest element in unsorted Array | Set 4
+Generate all numbers up to N in Lexicographical Order
+Sort Matrix in alternating ascending and descending order rowwise
+Find weight of MST in a complete graph with edge
+Count of distinct possible pairs such that the element from A is greater than the element from B
+Maximum possible remainder when an element is divided by other element in the array
+Choose X elements from A [ ] and Y elements from B [ ] which satisfy the given condition
+Find minimum changes required in an array for it to contain k distinct elements
+Maximum number of elements without overlapping in a Line
+Delete odd and even numbers at alternate step such that sum of remaining elements is minimized
+Minimum operations to make frequency of all characters equal K
+Minimum range increment operations to Sort an array
+Sort prime numbers of an array in descending order
+Pair formation such that maximum pair sum is minimized
+Sort an array according to count of set bits
+Sort an array according to count of set bits
+Lexicographically smallest binary string formed by flipping bits at indices not divisible K1 or K2 such that count of 1 s is always greater than 0 s from left
+Find a pair of numbers with set bit count as at most that of N and whose Bitwise XOR is N
+Count of numbers in range [ L , R ] having sum of digits of its square equal to square of sum of digits
+Convert X into Y by repeatedly multiplying X with 2 or appending 1 at the end
+Lexicographically smallest string of maximum length made up of first K alphabets that does not contain any repeating substring
+Generate Quadratic Equation having given sum and product of roots
+Make all array elements equal by replacing adjacent pairs by their sum
+Most frequent character in a string after replacing all occurrences of X in a Binary String
+Maximize count of sheets possible by repeatedly reducing its area to half
+Minimum number of steps required to reach origin from a given point
+Count even sum pairs possible by selecting two integers from two given ranges respectively
+Minimize array elements required to be incremented or decremented to convert given array into a Fibonacci Series
+Queries to calculate sum of array elements present at every Yth index starting from the index X
+Calculate Bitwise OR of two integers from their given Bitwise AND and Bitwise XOR values
+Check if a given value can be reached from another value in a Circular Queue by K
+Count of subarrays having sum equal to its length | Set 2
+Split first N natural numbers into two sets with minimum absolute difference of their sums
+Check if a number is prime in Flipped Upside Down , Mirror Flipped and Mirror Flipped Upside Down
+Minimum Cost required to generate a balanced Bracket Sequence
+Count of permutations such that sum of K numbers from given range is even
+Count of N digit Numbers whose sum of every K consecutive digits is equal | Set 2
+Sum of largest divisor of numbers upto N not divisible by given prime number P
+Count of right shifts for each array element to be in its sorted position
+Construct a matrix with sum equal to the sum of diagonal elements
+Minimum count of numbers required with unit digit X that sums up to N
+Minimum number of points required to cover all blocks of a 2
+Largest lexicographical string with at most K consecutive elements
+Minimum operations to make all elements equal using the second array
+Find the maximum sum ( a + b ) for a given input integer N satisfying the given condition
+Maximize the sum of array after multiplying a prefix and suffix by
+Count of interesting primes upto N
+Maximize the number by flipping at most K bits
+Find the subsequence with given sum in a superincreasing sequence
+Find the most valued alphabet in the String
+Queries for number of distinct elements from a given index till last index in an array
+Convert given integer X to the form 2 ^ N
+Minimum number of given operations required to reduce the array to 0 element
+Minimum LCM and GCD possible among all possible sub
+Form lexicographically smallest string with minimum replacements having equal number of 0 s , 1 s and 2 s
+Minimum number of adjacent swaps for arranging similar elements together
+Largest palindromic number by permuting digits
+Minimum Swaps for Bracket Balancing
+Minimum Cost to cut a board into squares
+Minimize the count of characters to be added or removed to make String repetition of same substring
+Minimize operations to reduce N to 2 by repeatedly reducing by 3 or dividing by 5
+Maximum profit after buying and selling the stocks with transaction fees | Set 2
+Maximum path sum from top left to bottom right of a matrix passing through one of the given cells
+Length of longest subset consisting of A 0 s and B 1 s from an array of strings | Set 2
+Count ways to select N pairs of candies of distinct colors ( Dynamic Programming + Bitmasking )
+Minimize cost to reach end of an array by two forward jumps or one backward jump in each move
+Calculate the value of 2 raised to the power of twice the binary representation of N
+Calculate the value of 2 raised to the power of twice the binary representation of N
+Count ways to obtain given sum by repeated throws of a dice
+Check if an array can be split into 3 subsequences of equal sum or not
+Check if an array can be split into 3 subsequences of equal sum or not
+Smallest index in given range of indices which is not equal to X
+Count number of ways to convert string S to T by performing K cyclic shifts
+Minimize steps to reach K from 0 by adding 1 or doubling at each step
+Find maximum subset sum formed by partitioning any subset of array into 2 partitions with equal sum
+Find maximum subset sum formed by partitioning any subset of array into 2 partitions with equal sum
+Count of strings possible by replacing two consecutive same character with new character
+Golomb Sequence | Set 2
+Count ways to reach Nth Stairs by taking 1 and 2 steps with exactly one 3 step
+Maximum number of multiples in an array before any element
+Number of ways to reach the end of matrix with non
+Maximum sum from three arrays such that picking elements consecutively from same is not allowed
+Number of ways to make binary string of length N such that 0 s always occur together in groups of size K
+Number of ways to pair people
+Count ways to reach a score using 1 and 2 with no consecutive 2 s
+Weird Number
+Maximum subarray sum in an array created after repeated concatenation
+Longest Increasing Odd Even Subsequence
+Minimum and Maximum values of an expression with * and +
+Matrix Chain Multiplication | DP
+Matrix Chain Multiplication | DP
+Numbers formed by flipping common set bits in two given integers
+Sum of Hamming difference of consecutive numbers from 0 to N | Set 2
+Sum of all divisors from 1 to N | Set 3
+Minimize number of cuts required to break N length stick into N unit length sticks
+Count of distinct pair sum between two 1 to N value Arrays
+Print Triangle separated pattern
+Find starting index for every occurrence of given array B in array A using Z
+Check if a string can be repeated to make another string
+Check if a string can be formed from another string using given constraints
+Count of occurrences of a "1(0 + ) 1" pattern in a string
+Convert given Strings into T by replacing characters in between strings any number of times
+Palindromic strings of length 3 possible by using characters of a given string
+Count occurrences of substring X before every occurrence of substring Y in a given string
+Program to construct DFA for Regular Expression C ( A + B ) +
+Minimum and maximum number of digits required to be removed to make a given number divisible by 3
+Minimum replacements required to obtain a K
+Check if a String contains any index with more than K active characters
+Count the number of strings in an array whose distinct characters are less than equal to M
+Remove odd frequency characters from the string
+Product of nodes at k
+Print the most occurring character in an array of strings
+Check whether the given floating point number is a palindrome
+Maximum number of times str1 appears as a non
+Number of ways to insert two pairs of parentheses into a string of N characters
+Minimum number of substrings the given string can be splitted into that satisfy the given conditions
+Number of substrings that start with " geeks " and end with " for "
+InfyTQ 2019 : Find the position from where the parenthesis is not balanced
+Encrypt the given string with the following operations
+Rearrange characters in a string such that no two adjacent are same using hashing
+Find uncommon characters of the two strings | Set 2
+Minimum number of bracket reversals needed to make an expression balanced | Set
+Character pairs from two strings with even sum
+Maximum occurrence of prefix in the Array
+Minimum number of given operations required to convert a string to another string
+Decrypt a string encrypted by repeating i
+Find Bit whose minimum sequence flips makes all bits same
+Sum and Product of Prime Frequencies of Characters in a String
+Check if frequency of character in one string is a factor or multiple of frequency of same character in other string
+Remove even frequency characters from the string
+Sum of all subsequences of a number
+Longest subsequence where each character occurs at least k times
+gOOGLE cASE of a given sentence
+Encrypt string with product of number of vowels and consonants in substring of size k
+Count occurrences of a word in string
+Program to find the initials of a name .
+Permute a string by changing case
+Print the string after the specified character has occurred given no . of times
+Reverse vowels in a given string
+Minimum number of palindromic subsequences to be removed to empty a binary string
+Find the value of XXXX ... . . ( N times ) % M where N is large
+Check if two circles intersect such that the third circle passes through their points of intersections and centers
+Program to find the Eccentricity of a Hyperbola
+Calculate area of a cyclic quadrilateral with given side lengths
+Calculate ratio of area of a triangle inscribed in an Ellipse and the triangle formed by corresponding points on auxiliary circle
+Program to find the Excenters of a Triangle
+Program to find height of a Trapezoid
+Icositetragonal Number
+Area of circle inscribed in a Isosceles Trapezoid
+Area of Equilateral triangle inscribed in a Circle of radius R
+Area of largest Circle that can be inscribed in a SemiCircle
+Number of pairs of lines having integer intersection points
+Maximum number of line intersections formed through intersection of N planes
+Area of a Regular Pentagram
+Angle subtended by the chord to center of the circle when the angle subtended by the another equal chord of a congruent circle is given
+Program to print ASCII Value of all digits of a given number
+A Product Array Puzzle | Set 3
+Count subarrays made up of single
+Count integers up to N which can be represented as sum of two or more consecutive numbers
+Count integers up to N which can be represented as sum of two or more consecutive numbers
+Maximum difference between a pair of adjacent elements by excluding every element once
+Minimize increments required to make count of even and odd array elements equal
+Count ways to construct array with even product from given array such that absolute difference of same indexed elements is at most 1
+Count numbers up to N whose rightmost set bit is K
+Count odd and even Binomial Coefficients of N
+Make all array elements even by replacing any pair of array elements with their sum
+Split squares of first N natural numbers into two sets with minimum absolute difference of their sums
+Largest divisor of a number not divisible by another given number
+Check if rows of a Matrix can be rearranged to make Bitwise XOR of first column non
+Maximize Bitwise AND of first element with complement of remaining elements for any permutation of given Array
+Sum of all products of the Binomial Coefficients of two numbers up to K
+Fast Exponention using Bit Manipulation
+Find M such that GCD of M and given number N is maximum
+First element of every K sets having consecutive elements with exactly K prime factors less than N
+Product of Complex Numbers using three Multiplication Operation
+Insolite Numbers
+D Numbers
+Ruth
+Maximize sum of absolute difference between adjacent elements in Array with sum K
+Sum of all divisors from 1 to N | Set 2
+Nontrivial undulant Numbers
+Megagon number
+Product of all the pairs from the given array
+Product of all the pairs from the given array
+Construct an Array such that cube sum of all element is a perfect square
+Count of all subsequence whose product is a Composite number
+Find K consecutive integers such that their sum is N
+Represent N as sum of K even numbers
+Count of contiguous subarrays possible for every index by including the element at that index
+Smallest number greater than or equal to X whose sum of digits is divisible by Y
+Count the numbers which can convert N to 1 using given operation
+Maximum possible prime divisors that can exist in numbers having exactly N divisors
+Count ways to express a number as sum of exactly two numbers
+Divide array in two maximum equal length arrays of similar and dissimilar elements
+Find sum of xor of all unordered triplets of the array
+Probability of not getting two consecutive heads together in N tosses of coin
+Check if number formed by joining two Numbers is Perfect Cube
+Largest number in given Array formed by repeatedly combining two same elements
+Check if it is possible to make x and y zero at same time with given operation
+Wheel Factorization Algorithm
+Find all Pairs possible from the given Array
+Sum of cubes of all Subsets of given Array
+Check if a circle lies inside another circle or not
+Length of direct common tangent between two intersecting Circles
+Radius of the circle when the width and height of an arc is given
+Shortest distance from the centre of a circle to a chord
+Length of direct common tangent between the two non
+Biggest Square that can be inscribed within an Equilateral triangle
+Apothem of a n
+Area of a n
+Side of a regular n
+Largest right circular cylinder within a frustum
+Program to find the Perimeter of a Regular Polygon
+Area of the biggest possible rhombus that can be inscribed in a rectangle
+Check if a point lies inside a rectangle | Set
+Distance between a point and a Plane in 3 D
+Program to find the Volume of a Triangular Prism
+Check if given four integers ( or sides ) make rectangle
+Program to find the mid
+Arc length from given Angle
+Check if a line touches or intersects a circle
+Program to find Circumcenter of a Triangle
+Program to find area of a triangle
+Maximize sum of LSBs of Bitwise OR of all possible N / 2 pairs from given Array
+Count of subsequences having odd Bitwise AND values in the given array
+Count pairs from an array with absolute difference not less than the minimum element in the pair
+Minimum steps to change N to 1 by changing it to 2 * N or N / 10 at any step
+Sum of elements in given range from Array formed by infinitely concatenating given array
+Sum of elements in given range from Array formed by infinitely concatenating given array
+Exponential factorial of N
+Maximum subarray sum in an array created after repeated concatenation | Set
+Count of subarrays with largest element at least twice the largest of remaining elements
+Count of subarrays with largest element at least twice the largest of remaining elements
+Find Prime number just less than and just greater each element of given Array
+Kth smallest element in an array that contains A [ i ] exactly B [ i ] times
+Bitwise OR of Bitwise AND of all subarrays of an array
+Bitwise OR of Bitwise AND of all subarrays of an array
+Check if sum of digits of a number exceeds the product of digits of that number
+Print all distinct even and odd prefix Bitwise XORs of first N natural numbers
+Lexicographically largest permutation possible by a swap that is smaller than a given array
+Absolute difference between the count of odd and even factors of N
+Calculate Median from given values of Mean and Mode
+Program to find the Magnitude of a Vector
+Program to find the product of a number with a Mersenne Number
+Nearest power of 2 of nearest perfect squares of non
+Partition array into two subarrays with every element in the right subarray strictly greater than every element in left subarray
+Check if a number can be represented as sum of K positive integers out of which at least K
+Count ways to represent an integer as an exponent
+Highest power of 2 less than or equal to given Integer
+Number of cards needed build a House of Cards of a given level N
+Find smallest possible Number from a given large Number with same count of digits
+Count the subarray with sum strictly greater than the sum of remaining elements
+Count the subarray with sum strictly greater than the sum of remaining elements
+Remove one element to get maximum XOR
+Count of numbers from the range [ L , R ] which contains at least one digit that divides K
+Check if a given number is factorial of any number
+Remove an element to minimize the LCM of the given array
+Number of coloured 0 's in an N
+Minimum value to be assigned to the elements so that sum becomes greater than initial sum
+Color all boxes in line such that every M consecutive boxes are unique
+Sum of squares of all Subsets of given Array
+Find the number of pairs such that their gcd is equals to 1
+Comparing X ^ Y and Y ^ X for very large values of X and Y
+Euler zigzag numbers ( Alternating Permutation )
+Gijswijt 's Sequence
+Wedderburn – Etherington number
+Maximum value after merging all elements in the array
+Decimal to Binary using recursion and without using power operator
+Find minimum possible values of A , B and C when two of the ( A + B ) , ( A + C ) and ( B + C ) are given
+Check whether it is possible to convert A into B
+Count Distinct Rectangles in N * N Chessboard
+Total number of days taken to complete the task if after certain days one person leaves
+Find average of two numbers using bit operation
+Smallest index such that there are no 0 or 1 to its right
+Total position where king can reach on a chessboard in exactly M moves | Set 2
+Number of quadruples where the first three terms are in AP and last three terms are in GP
+Numbers in a Range with given Digital Root
+Sum of even values and update queries on an array
+Sum of even values and update queries on an array
+Number of Hamiltonian cycle
+Smallest integer greater than n such that it consists of digit m exactly k times
+Composite XOR and Coprime AND
+Smallest perfect Cube divisible by all elements of an array
+Check if N is Strong Prime
+Minimum removals in a number to be divisible by 10 power raised to K
+Program to find the sum of the series ( 1 / a + 2 / a ^ 2 + 3 / a ^ 3 + ... + n / a ^ n )
+Check if a number is an Unusual Number or not
+Check if at least half array is reducible to zero by performing some operations
+Check if the given number is Ore number or not
+Check whether the given number is Euclid Number or not
+Check whether the given number is Wagstaff prime or not
+Area of a square inscribed in a circle which is inscribed in a hexagon
+Program to find Nth term of series 1 , 6 , 17 , 34 , 56 , 86 , 121 , 162 , ... ... .
+Sum of the first N terms of the series 2 , 10 , 30 , 68 , ... .
+Check if two arrays are permutations of each other using Mathematical Operation
+Program to find the head start in a race
+Minimum time required to fill a cistern using N pipes
+Check if Decimal representation of an Octal number is divisible by 7
+Sum of all the prime divisors of a number
+Sum of all the prime divisors of a number
+Find ( a ^ b ) % m where ' b ' is very large
+Squares of numbers with repeated single digits | Set 1 ( 3 , 6 and 9 )
+Trick for modular division ( ( x1 * x2 ... . xn ) / b ) mod ( m )
+Trick for modular division ( ( x1 * x2 ... . xn ) / b ) mod ( m )
+Ways to multiply n elements with an associative operation
+Pythagorean Triplet with given sum
+Program to print binomial expansion series
+Sum of series with alternate signed squares of AP
+Power of a prime number ‘ r ’ in n !
+Average of first n odd naturals numbers
+Average of first n odd naturals numbers
+Program to print Fibonacci Triangle
+Average of odd numbers till a given odd number
+Average of odd numbers till a given odd number
+Find max of two Rational numbers
+Trinomial Triangle
+Trinomial Triangle
+Sum of largest prime factor of each number less than equal to n
+Sum of multiples of a number up to N
+Given a HUGE number check if it 's a power of two.
+Given a HUGE number check if it 's a power of two.
+Count divisors of array multiplication
+Count divisors of array multiplication
+K distant prime pairs in a given range
+Enneacontahexagon numbers
+Find two Composite Numbers such that there difference is N
+Count the number of pairs ( i , j ) such that either arr [ i ] is divisible by arr [ j ] or arr [ j ] is divisible by arr [ i ]
+Find the Nth term of the series 1 + 2 + 6 + 15 + 31 + 56 + ...
+Program to find N
+Program to find Nth term of the series 3 , 6 , 18 , 24 , ...
+Program to print binomial expansion series
+Check if a number is divisible by 8 using bitwise operators
+Average of even numbers till a given even number
+Average of even numbers till a given even number
+Largest number that divides x and is co
+Count numbers with unit digit k in given range
+Taxicab Numbers
+Composite Number
+Insert minimum number in array so that sum of array becomes prime
+Sum of divisors of factorial of a number
+Sum of divisors of factorial of a number
+Pandigital number in a given base
+Convert a number m to n using minimum number of given operations
+Seeds ( Or Seed Roots ) of a number
+Number with maximum number of prime factors
+Sum of all Subarrays | Set 1
+Highest power of 2 less than or equal to given number
+Find Cube Pairs | Set 2 ( A n ^ ( 1 / 3 ) Solution )
+Find Cube Pairs | Set 1 ( A n ^ ( 2 / 3 ) Solution )
+Find the minimum difference between Shifted tables of two numbers
+Find all divisors of a natural number | Set 2
+Find all divisors of a natural number | Set 2
+Find all factors of a natural number | Set 1
+Find all factors of a natural number | Set 1
+Sieve of Atkin
+Find if a point lies inside a Circle
+Program to check if a given number is Lucky ( all digits are different )
+Print squares of first n natural numbers without using * , / and
+Write a program to reverse digits of a number
+Find a number such that maximum in array is minimum possible after XOR
+Count of elements which are equal to the XOR of the next two elements
+Number of triplets in array having subarray xor equal
+Find the number of pair of Ideal nodes in a given tree
+Print bitwise AND set of a number N
+Check if a number is divisible by 17 using bitwise operators
+Largest number with binary representation is m 1 's and m
+Find most significant set bit of a number
+Find most significant set bit of a number
+Count trailing zero bits using lookup table
+Count trailing zero bits using lookup table
+Calculate 7 n / 8 without using division and multiplication operators
+Calculate 7 n / 8 without using division and multiplication operators
+Longest set of Palindrome Numbers from the range [ L , R ] with at most K difference between its maximum and minimum
+Maximize Sum possible by subtracting same value from all elements of a Subarray of the given Array
+Check if the given string is shuffled substring of another string
+Maximize the median of the given array after adding K elements to the same array
+Sort 3 Integers without using if condition or using only max ( ) function
+Binary Insertion Sort
+Insertion Sort
+Count of distinct permutation of a String obtained by swapping only unequal characters
+Counts paths from a point to reach Origin
+Coin Change | DP
+Check if two strings are same ignoring their cases
+Replace every consonant sequence with its length in the given string
+Encrypt string with product of number of vowels and consonants in substring of size k
+String containing first letter of every word in a given string with spaces
+Generate all binary strings without consecutive 1 's
+Largest right circular cylinder within a cube
+Program for volume of Pyramid
+Program to find area of a Trapezoid
+Find number of diagonals in n sided convex polygon
+Area of the largest Rectangle without a given point
+Minimize cost of removals required to make all remaining characters of the string unique
+Smallest divisor of N closest to X
+Count elements of same value placed at same indices of two given arrays
+Check if given Sudoku solution is valid or not
+Subarray of length K whose concatenation forms a palindrome
+Check if a sequence of path visits any coordinate twice or not
+Maximum width of an N
+Minimize sum of prime numbers added to make an array non
+Count ways to split a Binary String into three substrings having equal count of zeros
+Check if a string can be converted to another by swapping of adjacent characters of given type
+Longest Substring having equal count of Vowels and Consonants
+Minimum Distance from a given Cell to all other Cells of a Matrix
+Minimum flips required to convert given string into concatenation of equal substrings of length K
+Find the missing number in unordered Arithmetic Progression
+Given a string and an integer k , find the kth sub
+Lower Insertion Point
+Number of positions with Same address in row major and column major order
+Maximum in an array that can make another array sorted
+Middle of three using minimum comparisons
+Sort the matrix column
+Largest area possible after removal of a series of horizontal & vertical bars
+Check if an array can be sorted by swapping pairs from indices consisting of unequal elements in another array
+Minimum swaps required between two strings to make one string strictly greater than the other
+Maximize sum of pairwise products generated from the given Arrays
+Largest lexicographic triplet from a given Array that forms a triangle
+Count of all pairs in an Array with minimum absolute difference
+Maximum size subset with given sum using Backtracking
+Sort decreasing permutation of N using triple swaps
+Find K such that changing all elements of the Array greater than K to K will make array sum N
+Find three element from given three arrays such that their sum is X | Set 2
+Arrange given numbers to form the smallest number
+Stable Selection Sort
+Permute two arrays such that sum of every pair is greater or equal to K
+Sort an array according to count of set bits
+Check if end of given Binary string can be reached by choosing jump value in between given range
+Split an array into subarrays with maximum Bitwise XOR of their respective Bitwise OR values
+Construct an N
+Minimize cost to convert given string into concatenation of equal substrings of length K
+Split first N natural numbers into two sets with minimum absolute difference of their sums
+Find maximum matching in a given Binary Tree
+Minimize cost to Swap two given Arrays
+Print all possible ways to write N as sum of two or more positive integers
+Check if a string can be split into two strings with same number of K
+Check if two items can be selected from two different categories without exceeding price
+Find the maximum sum ( a + b ) for a given input integer N satisfying the given condition
+Encrypt a string by repeating i
+Minimize the difference between the maximum and minimum values of the modified array
+Minimum Swaps for Bracket Balancing
+Longest subsequence from an array of pairs having first element increasing and second element decreasing .
+Count ways to obtain given sum by repeated throws of a dice
+Count ways to obtain given sum by repeated throws of a dice
+Split the string into minimum parts such that each part is in the another string
+Largest Square in a Binary Matrix with at most K 1 s for multiple Queries
