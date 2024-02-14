@@ -27,6 +27,19 @@ Sprint 2:
     3) Future plan: Tess will further enrich the LLM Chatbot page so that it will support more sophisticated functionality based on the identified task. Tess will also modify the file upload section in the Code_Summarization.py page to enable RAG functionality, so that the app will retrieve relevant information from the uploaded file and generate more precise answers.
     
     * Joyce:
+    Majorly focused on fine-tuning StarCoder for Code Summarization. 
+    1) Preprocessed the XLCoST dataset and outputs training/val/test dataset for python code - summarization pairs. 
+        * Datasets description: The raw dataset is from XLCoST dataset which is a comprehensive dataset focusing on all tasks of coding. The original dataset is stored in 'finetune code summarization/datasets_summarization/pair_data_tok_1_comment/Python-comment' for code snippets summarization and 'finetune code summarization/datasets_summarization/pair_data_tok_full_desc/Python-comment' for python programs. 
+        * Processed dataset: The output file is stored in 'finetune code summarization/datasets_summarization/process_data'. For snippet level python code summarization, we have 81.2K training pairs, 3.9K validation data pairs, and 7.3K test data pairs. For program level samples, we have 9.3K training pairs, 472 validation pairs, and 887 test pairs. All files are stored in .json format and can be passed in fine-tuning datasets. One observation for the dataset is that there is some noise, meaning that there are some samples that inaccurately summarize the actual python code. However, the chances of noise are low, so we ignore this issue.
+        * Notebook: The notebook for data preprocessing is named as 'data_preprocessing.ipynb'. 
+    2) Completed the script for fine-tuning StarCoder on code summarization. 
+        * The major components include: 
+            a) an IterableDataset named SummarizationDataset. Basically, it takes json file (as what we preprocessed), encodes the samples, transfers into the data used in final training step.
+            b) Low-Rank Adaptation method (LoRA):  We cite from the paper LoRA: Low-Rank Adaptation of Large Language Models (https://arxiv.org/abs/2106.09685). It claims that when we fine-tune, we only need to modify the first few ranks of the matrices. In practice, it yields good result with high efficiency in terms of time and storage. In the end, we only need to save LoRA metrices which is only 0.05% of total number of parameters. We can use lora in peft implemented by huggingface.
+            c) Normal training config
+    3) Future work: Due to the complications for credits, we are not able to perform fine-tuning. After receiving the credits, we are going to fine-tune StarCoder on code summarization, get the LoRA matrices, and merge them into StarCoder along with code translation and generation tasks.
+
+
 
 * Testing Instruction:
     * Code Translation: To evaluate the capabilities of our code translator, users are encouraged to initially present the chatbot with a Python script that incorporates distinct Python libraries (like OpenAI), enabling the chatbot to determine its incompatibility for translation to the chosen target language. 
