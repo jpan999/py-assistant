@@ -4,11 +4,8 @@ import yaml
 import re
 import warnings
 from tempfile import NamedTemporaryFile
-from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationSummaryMemory
-from langchain_openai import ChatOpenAI
 from src.components.infoLoader import InfoLoader
 from src.components.vectorDB import VectorDB
 warnings.filterwarnings("ignore")
@@ -123,11 +120,6 @@ else:
                     try:
                         st.write("Splitting documents...")
                         loader.get_chunks(uploaded_files)
-                        # db = Chroma.from_documents(loader.document_chunks_full, OpenAIEmbeddings(disallowed_special=(),openai_api_key = llm_api_key))
-                        # retriever = db.as_retriever(
-                        #     search_type="mmr",  # Also test "similarity"
-                        #     search_kwargs={"k": 8},
-                        # )
                         vector_DB.create_embedding_function(llm_api_key)
                         vector_DB.initialize_database(loader.document_chunks_full)
 
@@ -143,6 +135,7 @@ else:
         placeholder="I am reading code for a python application. Explain to me how it works.",
         disabled=not uploaded_files,
     )
+    
     if st.button('Get Answer', type='primary') and question:
         if model == "gpt-3.5-turbo":
             vector_DB.create_llm(model, llm_api_key, 0.4)
@@ -162,10 +155,8 @@ else:
                 st.markdown(document.page_content + '\n\n')
                 st.write('-----------------------------------')
 
-
-
         else:
-
+            # use Anthropic API
             if uploaded_files and question and llm_api_key:
                 code_file = uploaded_files.read().decode()
                 prompt = f"""{anthropic.HUMAN_PROMPT} Here's a python file:\n\n<article>
