@@ -39,8 +39,13 @@ Sprint 2:
             c) Normal training config
     3) Future work: Due to the complications for credits, we are not able to perform fine-tuning. After receiving the credits, we are going to fine-tune StarCoder on code summarization, get the LoRA matrices, and merge them into StarCoder along with code translation and generation tasks.
 
-
+Sprint 3:
+* Progress & Contributions:
+    * Tess: 
+        1) Successfully implemented the Retrieval-Augmented Generation (RAG) functionality on the "Code_Summarization" page utilizing LangChain. This enhancement allows users to upload multiple files for embedding, enabling the RAG system to efficiently retrieve the most relevant documents based on a user's query. Consequently, this system provides precise answers by leveraging the context provided by the user's input.
+        2) Demo day plan: Tess will include further developments to the LLM Chatbot page. Should our efforts to fine-tune our model for the final demo prove successful, Tess will integrate this optimized model for the specified tasks. Additionally, Tess is set to expand the chatbot's functionality by incorporating advanced prompting techniques, such as the Chain-of-Thought approach, to enhance its utility and user experience. On the demo day, Tess will showcase the capabilities of Py-assistant end-to-end, using different LLM backends for specific coding tasks.
 
 * Testing Instruction:
     * Code Translation: To evaluate the capabilities of our code translator, users are encouraged to initially present the chatbot with a Python script that incorporates distinct Python libraries (like OpenAI), enabling the chatbot to determine its incompatibility for translation to the chosen target language. 
     Subsequently, users should submit a Python file featuring an object-oriented programming structure to the chatbot, which will allow for an accurate translation of the content into the corresponding language of choice.
+    * Code Summarization: We invite users to explore the capabilities of the Retrieval-Augmented Generation (RAG) feature by uploading 3-4 Python files and posing a specific question concerning the code. Following this, users will experience the RAG system in action, as it responds to the query using retrieved source documents to provide context and deliver accurate answers. 
