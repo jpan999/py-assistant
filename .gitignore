@@ -1,0 +1,5 @@
+# Mac/OSX
+.DS_Store
+
+# Source for the following rules: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+__pycache__/
