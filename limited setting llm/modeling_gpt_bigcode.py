@@ -117,11 +117,11 @@ class GPTBigCodeAttention(nn.Module):
         self.c_proj = nn.Linear(self.embed_dim, self.embed_dim)
 
         ############################################ LoRA layers #####################################################################
-        self.lora_A_c_attn = nn.ModuleList([nn.Linear(self.embed_dim, 4, bias=False) for _ in range(5)])
-        self.lora_B_c_attn = nn.ModuleList([nn.Linear(4, self.embed_dim + 2 * self.kv_dim, bias=False) for _ in range(5)]) #not supporting cross attention
+        self.lora_A_c_attn = nn.ModuleList([nn.Linear(self.embed_dim, 4, bias=False) for _ in range(6)])
+        self.lora_B_c_attn = nn.ModuleList([nn.Linear(4, self.embed_dim + 2 * self.kv_dim, bias=False) for _ in range(6)]) #not supporting cross attention
 
-        self.lora_A_c_proj = nn.ModuleList([nn.Linear(self.embed_dim, 4, bias=False) for _ in range(5)])
-        self.lora_B_c_proj = nn.ModuleList([nn.Linear(4, self.embed_dim, bias=False) for _ in range(5)]) 
+        self.lora_A_c_proj = nn.ModuleList([nn.Linear(self.embed_dim, 4, bias=False) for _ in range(6)])
+        self.lora_B_c_proj = nn.ModuleList([nn.Linear(4, self.embed_dim, bias=False) for _ in range(6)]) 
         ##############################################################################################################################
 
         self.attn_dropout = nn.Dropout(config.attn_pdrop)
@@ -645,7 +645,7 @@ class GPTBigCodeModel(GPTBigCodePreTrainedModel):
         self.wpe = nn.Embedding(config.max_position_embeddings, self.embed_dim)
 
         ############################ MoE Gate ################################################
-        self.moe_gate = nn.Linear(self.embed_dim, 6, bias=False) #output_dim = num_experts
+        self.moe_gate = nn.Linear(self.embed_dim, 5, bias=False) #output_dim = num_experts for code translation
         ######################################################################################
 
         self.drop = nn.Dropout(config.embd_pdrop)
@@ -1049,9 +1049,9 @@ class GPTBigCodeForCausalLM(GPTBigCodePreTrainedModel):
 
         #=============================================================================
         # Code Translation
-        logits = torch.max(logits, dim=1).values                #max pooling to aggregate information along the sequence dimension
         # only take first 5 elements logits (the last one is for code summarization)
-        logits = torch.nn.functional.softmax(logits[:5], dim=-1)
+        logits = torch.max(logits[:5], dim=1).values                #max pooling to aggregate information along the sequence dimension
+        logits = torch.nn.functional.softmax(logits, dim=-1)
 
         self.gates = torch.argmax(logits, dim=1)
     #################################################################################################
