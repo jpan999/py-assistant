@@ -42,7 +42,7 @@ Sprint 2:
 Sprint 3:
 * Progress & Contributions:
     * Tess: 
-        1) Successfully implemented the Retrieval-Augmented Generation (RAG) functionality on the "Code_Summarization" page utilizing LangChain. This enhancement allows users to upload multiple files for embedding, enabling the RAG system to efficiently retrieve the most relevant documents based on a user's query. Consequently, this system provides precise answers by leveraging the context provided by the user's input.
+        1) Successfully implemented the Retrieval-Augmented Generation (RAG) functionality on the "Code_Summarization" page utilizing LangChain. This enhancement allows users to upload multiple files for embedding, enabling the RAG system to efficiently retrieve the most relevant documents based on a user's query. Consequently, this system provides precise answers by leveraging the context provided by the user's input with the LLM of choice. Moreover, the RAG system has memory for past chat history, allowing users to maintain a continuous conversation with the chatbot.
         2) Demo day plan: Tess will include further developments to the LLM Chatbot page. Should our efforts to fine-tune our model for the final demo prove successful, Tess will integrate this optimized model for the specified tasks. Additionally, Tess is set to expand the chatbot's functionality by incorporating advanced prompting techniques, such as the Chain-of-Thought approach, to enhance its utility and user experience. On the demo day, Tess will showcase the capabilities of Py-assistant end-to-end, using different LLM backends for specific coding tasks.
 
 * Testing Instruction:
