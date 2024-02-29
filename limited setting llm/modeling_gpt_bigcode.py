@@ -645,7 +645,7 @@ class GPTBigCodeModel(GPTBigCodePreTrainedModel):
         self.wpe = nn.Embedding(config.max_position_embeddings, self.embed_dim)
 
         ############################ MoE Gate ################################################
-        self.moe_gate = nn.Linear(self.embed_dim, 5, bias=False) #output_dim = num_experts
+        self.moe_gate = nn.Linear(self.embed_dim, 6, bias=False) #output_dim = num_experts
         ######################################################################################
 
         self.drop = nn.Dropout(config.embd_pdrop)
@@ -1046,8 +1046,12 @@ class GPTBigCodeForCausalLM(GPTBigCodePreTrainedModel):
         hidden_states = inputs_embeds + position_embeds
 
         logits = self.transformer.moe_gate(hidden_states)
+
+        #=============================================================================
+        # Code Translation
         logits = torch.max(logits, dim=1).values                #max pooling to aggregate information along the sequence dimension
-        logits = torch.nn.functional.softmax(logits, dim=-1)
+        # only take first 5 elements logits (the last one is for code summarization)
+        logits = torch.nn.functional.softmax(logits[:5], dim=-1)
 
         self.gates = torch.argmax(logits, dim=1)
     #################################################################################################
@@ -1055,6 +1059,11 @@ class GPTBigCodeForCausalLM(GPTBigCodePreTrainedModel):
     ################################## Reset Expert Function #######################################
     def reset_expert(self):
             self.gates = None
+    #################################################################################################
+            
+    ################################## Set Summarization Expert #######################################
+    def set_sum_expert(self):
+        self.gates = 5
     #################################################################################################
 
 
