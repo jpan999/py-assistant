@@ -36,9 +36,7 @@ class InfoLoader():
         self.document_names = []
 
         def remove_delimiters(document_chunks : list):
-            '''
-            Helper function to remove remaining delimiters in document chunks
-            '''
+            # Helper function to remove remaining delimiters in document chunks
             for chunk in document_chunks:
                 for delimiter in self.config['splitter_options']['delimiters_to_remove']:
                     chunk.page_content = re.sub(delimiter, ' ', chunk.page_content)
