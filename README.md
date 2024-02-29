@@ -47,7 +47,7 @@ Sprint 3:
     * Joyce:
         1) 1.1 Created ”Code_Generation" page that can generate Python code under users instruction. Similar to all the previous page, the user can upload a file or use the chatbot. Also, it will first check if user's instruction is suitable to perform human language to python translation and then generate Python code for the user. 1.2 Completed "intergrated py-assistant LLM" architecture. Basically, SteloCoder is capable to perform 5 programming language to Python translation. Built on that, our LLM has 6 experts. The first 5 are used to detect which language the input is and output the translated code, while the 6th one is used to perform code summarization. Code generation can be performed without any LoRA merging. (Model Architecture attached below)
         Note: we are not able to complete fine-tuning since we still have limits on GPU usage.
-        2) Demo day plan: Joyce will include prompting techniques and RAG into py-assistant according to different use cases and scenerios. 
+        2) Demo day plan: Joyce will include prompting techniques and RAG into py-assistant according to different use cases and scenerios. Joyce will also add instructions for using py-assistant.
     
     ![UI](docs/Integrated_llm_architecture.png)
 
@@ -55,3 +55,4 @@ Sprint 3:
     * Code Translation: To evaluate the capabilities of our code translator, users are encouraged to initially present the chatbot with a Python script that incorporates distinct Python libraries (like OpenAI), enabling the chatbot to determine its incompatibility for translation to the chosen target language. 
     Subsequently, users should submit a Python file featuring an object-oriented programming structure to the chatbot, which will allow for an accurate translation of the content into the corresponding language of choice.
     * Code Summarization: We invite users to explore the capabilities of the Retrieval-Augmented Generation (RAG) feature by uploading 3-4 Python files and posing a specific question concerning the code. Following this, users will experience the RAG system in action, as it responds to the query using retrieved source documents to provide context and deliver accurate answers. 
+    * Code Generation: We invite users to explore the capabilities of code generator, users can either use chatbot to communicate with py-assistant or upload a file that contains users prompt. The py-assistant will first detect if the prompt is indeed description about programming code functionalities and then output the generated Python code correspondingly.
