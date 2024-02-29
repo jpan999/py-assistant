@@ -20,6 +20,9 @@ def initialize_session_state():
     if 'config' not in st.session_state:
         with open('config.yml', 'r') as file:
             st.session_state.config = yaml.safe_load(file)
+    if 'conversation_memory' not in st.session_state:
+    # Initialize a new conversation memory if it doesn't exist in the session
+        st.session_state.conversation_memory = []
 
 @st.cache_resource
 def get_resources():
@@ -36,7 +39,7 @@ loader, vector_DB = get_resources()
 with st.sidebar:
     backend_model = st.selectbox(
         "Select the LLM you want to use",
-        ("OpenAI gpt-3.5-turbo", "Anthropic claude-v1"), 
+        ("OpenAI gpt-3.5-turbo", "Anthropic claude-1.3"), 
         key="llm"
     )
 
@@ -44,7 +47,7 @@ with st.sidebar:
     
 st.title("Code Summarization with RAG")
 
-model_encode = {"OpenAI gpt-3.5-turbo": "gpt-3.5-turbo", "Anthropic claude-v1": "claude-v1"}
+model_encode = {"OpenAI gpt-3.5-turbo": "gpt-3.5-turbo", "Anthropic claude-1.3": "claude-1.3"}
 
 model = model_encode[backend_model] # "claude-2" for Claude 2 model
 
@@ -110,25 +113,40 @@ else:
             accept_multiple_files=True
             )
     
-
     if uploaded_files:
         if not llm_api_key:
             st.info("Please add your API key to continue.")
+            st.stop()
+        
+        if model == "claude-1.3":
+            openai_api_key = st.text_input(
+                "Please input your OpenAI API key for embedding.",
+                disabled=False,
+                type="password"
+            )
         else:
-            if st.button('Upload', type='primary'):
-                with st.status('Uploading... (this may take a while)', expanded=True) as status:
-                    try:
-                        st.write("Splitting documents...")
-                        loader.get_chunks(uploaded_files)
-                        vector_DB.create_embedding_function(llm_api_key)
-                        vector_DB.initialize_database(loader.document_chunks_full)
+            openai_api_key = None  
 
+        if st.button('Upload', type='primary'):
+            with st.spinner('Uploading... (this may take a while)'):
+                try:
+                    st.write("Splitting documents...")
+                    loader.get_chunks(uploaded_files)
 
-                    except Exception as e:
-                        status.update(label='Error occured.', state='error', expanded=False)
+                    if model == "claude-1.3":
+                        # Check if the API key was provided
+                        if not openai_api_key:
+                            st.error("OpenAI API key is required for 'claude-1.3' model.")
+                            st.stop()
+                        vector_DB.create_embedding_function(openai_api_key)
                     else:
-                        # if successful
-                        status.update(label='Embedding complete!', state='complete', expanded=False)
+                        vector_DB.create_embedding_function(llm_api_key)
+
+                    vector_DB.initialize_database(loader.document_chunks_full)
+                    st.success('Embedding complete!')
+
+                except Exception as e:
+                    st.error(f'Error occurred: {e}')
 
     question = st.text_input(
         "Ask anything you want to know about the Python code",
@@ -137,37 +155,17 @@ else:
     )
     
     if st.button('Get Answer', type='primary') and question:
-        if model == "gpt-3.5-turbo":
-            vector_DB.create_llm(model, llm_api_key, 0.4)
-            vector_DB.create_chain()
+        vector_DB.create_llm(model, llm_api_key, 0.4)
+        vector_DB.create_chain()
 
-            # memory = ConversationSummaryMemory(
-            #             llm=llm, memory_key="chat_history", return_messages=True
-            #         )
-            # qa = ConversationalRetrievalChain.from_llm(llm, retriever=retriever, memory=memory)
-
-            result = vector_DB.get_response(question)
-            st.info('Query Response:', icon='📕')
-            st.write(result['result'])
-            st.write(' ')
-            st.info('Sources', icon='📚')
-            for document in result['source_documents']:
-                st.markdown(document.page_content + '\n\n')
-                st.write('-----------------------------------')
-
-        else:
-            # use Anthropic API
-            if uploaded_files and question and llm_api_key:
-                code_file = uploaded_files.read().decode()
-                prompt = f"""{anthropic.HUMAN_PROMPT} Here's a python file:\n\n<article>
-                        {code_file}\n\n</article>\n\n{question}{anthropic.AI_PROMPT}"""
-
-                client = anthropic.Client(api_key=llm_api_key)
-                response = client.completions.create(
-                            prompt=prompt,
-                            stop_sequences=[anthropic.HUMAN_PROMPT],
-                            model="claude-v1",  # "claude-2" for Claude 2 model
-                            max_tokens_to_sample=100,
-                        )
-                st.write("### Answer")
-                st.write(response.completion)
+        result = vector_DB.get_response(question, st.session_state.conversation_memory)
+        st.session_state.conversation_memory.append((question, result['answer']))
+        st.info('Query Response:', icon='📕')
+        st.write(result['answer'])
+        st.write(' ')
+        st.info('Source Documents:', icon='📚')
+        for document in result['source_documents']:
+            st.markdown(document.page_content + '\n\n')
+            st.write('-----------------------------------')
+        st.info('Chat History:', icon='💬')
+        st.write(st.session_state.conversation_memory)
