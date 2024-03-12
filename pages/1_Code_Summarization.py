@@ -1,3 +1,4 @@
+import openai
 import streamlit as st
 import anthropic
 import yaml
@@ -8,8 +9,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationSummaryMemory
 from src.components.infoLoader import InfoLoader
 from src.components.vectorDB import VectorDB
+from src.chatbot_utilities import LLMChatbot
 warnings.filterwarnings("ignore")
-
 
 
 def initialize_session_state():
@@ -44,6 +45,8 @@ with st.sidebar:
     )
 
     llm_api_key = st.text_input("OpenAI/Anthropic API Key", key="file_qa_api_key", type="password")
+    if "chatbot" not in st.session_state or llm_api_key != st.session_state.chatbot.api_key:
+        st.session_state.chatbot = LLMChatbot(llm_api_key)
     
 st.title("Code Summarization with RAG")
 
@@ -66,43 +69,31 @@ mode_encode = {"✨ chat": 0, "♾️ file": 1}
 if mode_encode[input_mode] == 0:
     
     # use chat mode
-    INITIAL_MESSAGE = [
-        {"role": "user", "content": "Hi!"},
-        {
-            "role": "assistant",
-            "content": "Hey there, I'm your Python-speaking coding assistant, ready to answer your questions regarding Python code!💻",
-        },
-    ]
-
-    st.session_state["messages"] = INITIAL_MESSAGE
-
-    if "model" not in st.session_state:
+    chatbot = st.session_state.chatbot
+    if model != st.session_state.get("model", None):
         st.session_state["model"] = model
+    chatbot.set_model(st.session_state["model"])
 
-    for msg in st.session_state.messages:
+    for msg in chatbot.messages:
         st.chat_message(msg["role"]).write(msg["content"])
 
     if prompt := st.chat_input():
         if not llm_api_key:
-            st.info("Please add your Claude API key to continue.")
+            st.info("Please add your API key to continue.")
             st.stop()
-        
-        client = anthropic.Client(api_key=llm_api_key)
-
-        st.session_state.messages.append({"role": "user", "content": prompt})
-
         st.chat_message("user").write(prompt)
-        
-        response = client.completions.create(
-            prompt=f"""{anthropic.HUMAN_PROMPT} {prompt}{anthropic.AI_PROMPT}""",
-            stop_sequences=[anthropic.HUMAN_PROMPT],
-            model=model,  
-            max_tokens_to_sample=300,
-        )
-
-        msg = response.completion
-        st.session_state.messages.append({"role": "assistant", "content": msg})
-        st.chat_message("assistant").write(msg)
+        try:
+            user_intent = chatbot.get_user_intent(prompt)
+            if user_intent == "code summarization":
+                with st.spinner('Generating answer...'):
+                    reply = chatbot.generate_reply(prompt)
+                    st.chat_message("assistant").write(reply)
+            else:
+                st.chat_message("assistant").write("I'm a Python assistant dedicated to code summarization. I'm not quite sure what you're asking for. Could you please provide more details about your request?")
+        except openai.AuthenticationError:
+            st.error("Please input a valid API key.")
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
 
 else:
     # use file input
