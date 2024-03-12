@@ -1,12 +1,17 @@
 import streamlit as st
+import openai
 from openai import OpenAI
 import re
 import warnings
+from src.chatbot_utilities import LLMChatbot
+
 warnings.filterwarnings("ignore")
 
 
 with st.sidebar:
     api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+    if "chatbot" not in st.session_state or api_key != st.session_state.chatbot.api_key:
+        st.session_state.chatbot = LLMChatbot(api_key)
 
 st.title("Code Generation")
 
@@ -26,22 +31,15 @@ mode_encode = {"✨ chat": 0, "♾️ file": 1}
 
 if mode_encode[input_mode] == 0:
     
-    # use chat mode
-    INITIAL_MESSAGE = [
-        {"role": "user", "content": "Hi!"},
-        {
-            "role": "assistant",
-            "content": "Hey there, I'm your Python-speaking coding assistant, ready to design Python code under your instruction!",
-        },
-    ]
+    chatbot = st.session_state.chatbot
 
-    st.session_state["messages"] = INITIAL_MESSAGE
-
-    if "model" not in st.session_state:
+    if "model" != st.session_state.get("model", None):
         st.session_state["model"] = model
+    chatbot.set_model(st.session_state["model"])
 
-    for msg in st.session_state.messages:
-        st.chat_message(msg["role"]).write(msg["content"])
+    for msg in chatbot.messages:
+        if msg["role"] != "system":
+            st.chat_message(msg["role"]).write(msg["content"])
 
     if prompt := st.chat_input():
         if not api_key:
@@ -51,37 +49,34 @@ if mode_encode[input_mode] == 0:
         client = OpenAI(api_key=api_key)
 
         # append system instructions
-        st.session_state.messages.append({"role": "system", "content": f"I am a coding assistant capable of generating Python code under your instruction."})
+        chatbot.add_message("system", f"I am a coding assistant capable of generating Python code under your instruction.")
+
         # append user prompt
-        st.session_state.messages.append({"role": "user", "content": prompt})
         st.chat_message("user").write(prompt)
 
-        # Step 1: Pre-Generation Assessment
-        suitability_prompt = f"Check if the following code is suitable for code generation. Specifically, please check if the prompt can be translated into Python programming language. If suitable, please return 'suitable' as the answer. Else, please return an error message that contains 'not suitable' and states why it's not suitable."
-        response = client.chat.completions.create(model=st.session_state["model"], messages=[
-            {"role": "system", "content": "I am a coding assistant capable of translating your human language into Python functions."},
-            {"role": "user", "content": prompt},
-            {"role": "assistant", "content": suitability_prompt},
-        ])
-        suitability_response = response.choices[0].message.content
+        try:
+            # Step 1: Pre-Generation Assessment
 
-        if "not suitable" in suitability_response.lower():
-            error_msg = "\n The provided code may not be suitable for Python code generation. Please check your prompt and try again."
-            st.session_state.messages.append({"role": "assistant", "content": error_msg})
-            st.chat_message("assistant").write(suitability_response + error_msg)
-        
-        else:
-            # Step 2: Append assistant message
-            st.session_state.messages.append({"role": "assistant", "content": f"Please translate the user-input human language into Python code. The translated code should be functional and as concise as possible."})
-            with st.spinner('Generating answer...'):
-                response = client.chat.completions.create(model=st.session_state["model"], messages=st.session_state.messages)
-                msg = response.choices[0].message.content
-            st.session_state.messages.append({"role": "assistant", "content": msg})
-            st.chat_message("assistant").write(msg)
+            suitable, suitability_response = chatbot.check_gen_suitability(prompt)
+            if suitable == 0:
+                error_msg = "\n The provided code may not be suitable for Python code generation. Please check your prompt and try again."
+                chatbot.add_message("assistant", suitability_response + error_msg)
+                st.chat_message("assistant").write(suitability_response + error_msg)
+            
+            else:
+                # Step 2: Append assistant message
+                with st.spinner('Generating answer...'):
+                    reply = chatbot.generate_pycode(prompt)
+                    st.chat_message("assistant").write(reply)
+
+        except openai.AuthenticationError:
+            st.error("Please input a valid API key")
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
 
 else:
     # use file input
-    uploaded_file = st.file_uploader("Upload a Python file", type=("txt", "py"))
+    uploaded_file = st.file_uploader("Upload a .txt file", type="txt")
     if uploaded_file:
         if "last_uploaded_file" not in st.session_state or st.session_state.last_uploaded_file != uploaded_file.name:
             st.session_state.last_uploaded_file = uploaded_file.name 
