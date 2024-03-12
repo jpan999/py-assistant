@@ -75,10 +75,24 @@ class LLMChatbot:
             suitable = 0
         return suitable, suitability_response
     
+    def check_gen_suitability(self, prompt):
+        suitability_prompt = f"Check if the following code is suitable for code generation. Specifically, please check if users use any keywords that elaborate to generate programming language code such as 'function', 'write', or 'define', or 'make'. If suitable, please return 'suitable' as the answer. Else, please return an error message that says 'not suitable' and states why it's not suitable."
+        response = self.model.chat.completions.create(model=self.model_type, messages=[
+            {"role": "system", "content": "I am a coding assistant capable of translating your human language into Python functions."},
+            {"role": "user", "content": prompt},
+            {"role": "assistant", "content": suitability_prompt},
+        ])
+        suitability_response = response.choices[0].message.content
+        suitable = 1
+        if "not suitable" in suitability_response.lower():
+            suitable = 0
+        return suitable, suitability_response
+
     def get_reply(self, messages):
         if self.model_type == "gpt-3.5-turbo":
             response = self.model.chat.completions.create(model=self.model_type, messages=messages)
             reply = response.choices[0].message.content
+            print(reply)
         else:
             chat_prompt = f"""{anthropic.HUMAN_PROMPT} Here's the user input: {messages} {anthropic.AI_PROMPT}"""
             
@@ -107,5 +121,13 @@ class LLMChatbot:
         self.add_message("user", prompt)
         self.add_message("assistant", f"Please translate the user-input python code into {target_language}. The translated code should be functional and as concise as possible.")
         response = self.get_reply(self.messages)
+        self.add_message("assistant", response)
+        return response
+    
+    def generate_pycode(self, prompt):
+        self.add_message("user", prompt)
+        self.add_message("assistant", f"Please translate the user-input human language into Python code. The translated code should be functional and as concise as possible.")
+        response = self.get_reply(self.messages)
+        print(response)
         self.add_message("assistant", response)
         return response
