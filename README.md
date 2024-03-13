@@ -51,8 +51,15 @@ Sprint 3:
     
     ![UI](docs/Integrated_llm_architecture.png)
 
+Final Demo:
+* Progress & Contributions:
+    * Tess: 
+        1) Following the feedback from Sprint 2, I've restructured the essential functions of the LLM Chatbot into chatbot_utilities.py. This update has effectively modularized critical LLM operations, like answer generation and user intent analysis, into callable functions. This modification has significantly enhanced the codebase's readability and maintainability. Consequently, we've managed to reorganize the repetitive interactions with both OpenAI and Anthropic models as a unified segment of code. This adaptation has been implemented across the main page, as well as the modules for code generation, code translation, and code summarization.
+        2) For the RAG system, I have introduced a feature for collecting feedback from users. This functionality allows users to submit their feedback on each response, which can then be tracked in LangSmith through an external link. This improvement aids in monitoring the LLM agent in terms of speed and response quality, and will offer valuable insights into potential system enhancements based on user input.
+    * Joyce: 
+
 * Testing Instruction:
     * Code Translation: To evaluate the capabilities of our code translator, users are encouraged to initially present the chatbot with a Python script that incorporates distinct Python libraries (like OpenAI), enabling the chatbot to determine its incompatibility for translation to the chosen target language. 
     Subsequently, users should submit a Python file featuring an object-oriented programming structure to the chatbot, which will allow for an accurate translation of the content into the corresponding language of choice.
-    * Code Summarization: We invite users to explore the capabilities of the Retrieval-Augmented Generation (RAG) feature by uploading 3-4 Python files and posing a specific question concerning the code. Following this, users will experience the RAG system in action, as it responds to the query using retrieved source documents to provide context and deliver accurate answers. 
+    * Code Summarization: We invite users to explore the capabilities of the Retrieval-Augmented Generation (RAG) feature by uploading 3-4 Python files and posing a specific question concerning the code. Following this, users will experience the RAG system in action, as it responds to the query using retrieved source documents to provide context and deliver accurate answers. Finally, users now have the opportunity to provide feedback on each response from the LLM, and can track the system's speed and performance through LangSmith.
     * Code Generation: We invite users to explore the capabilities of code generator, users can either use chatbot to communicate with py-assistant or upload a file that contains users prompt. The py-assistant will first detect if the prompt is indeed description about programming code functionalities and then output the generated Python code correspondingly.
