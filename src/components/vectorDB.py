@@ -7,6 +7,7 @@ from langchain.memory import ConversationSummaryMemory, ConversationBufferMemory
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
 from langchain.callbacks import get_openai_callback
 from langchain.vectorstores import FAISS
+from langchain.schema.runnable import RunnableConfig
 
 
 class VectorDB():
@@ -14,6 +15,8 @@ class VectorDB():
         self.config = config
         self.db_option = config['embedding_options']['db_option']
         self.document_names = None
+        self.qa_chain = None
+        self.memory = None
 
     def create_embedding_function(self, openai_api_key : str):
         self.embedding_function = OpenAIEmbeddings(
@@ -28,16 +31,16 @@ class VectorDB():
 
     def create_llm(self, model: str, llm_api_key : str, temperature : int):
         # Instantiate the llm object 
-        if model == "gpt-3.5-turbo":
+        if model.startswith("gpt-"):
             self.llm = ChatOpenAI(
-                            model_name=model,
+                            model_name="gpt-3.5-turbo",
                             temperature=temperature,
-                            api_key=llm_api_key
+                            api_key=llm_api_key, streaming=True
                         )
         else:
             self.llm = ChatAnthropic(model_name=model,
                                      temperature=temperature,
-                                      anthropic_api_key=llm_api_key )
+                                      anthropic_api_key=llm_api_key)
         
 
     def create_chain(self):
@@ -72,7 +75,7 @@ class VectorDB():
         #     chain_type_kwargs={"prompt": qa_chain_prompt}
         # )
 
-        memory = ConversationBufferMemory(
+        self.memory = ConversationBufferMemory(
                         llm=self.llm, memory_key="chat_history", output_key="answer", return_messages=True
                 )
         self.qa_chain = ConversationalRetrievalChain.from_llm(
@@ -82,20 +85,33 @@ class VectorDB():
                 search_kwargs={"k": 4} 
             ),
             verbose=True,
-            chain_type="stuff",
+            # chain_type="stuff",
             get_chat_history=lambda h : h,
             combine_docs_chain_kwargs={'prompt': qa_chain_prompt},
-            memory = memory,
+            memory = self.memory,
             return_source_documents=True
         )
     
-    def get_response(self, user_input : str, chat_history: list):
+    def get_response(self, user_input : str, chat_history: list, runnable_config: RunnableConfig):
         # Query and Response
-        with get_openai_callback() as cb:
-            result = self.qa_chain({"question": user_input, "chat_history": chat_history})
-        return result
-
-
+        result = ""
+        source_docs = []
+        input_structure = {
+                    "question": user_input,
+                    "chat_history": [
+                        (msg[0], msg[1])
+                        for msg in chat_history
+                    ],
+                }
+        for chunk in self.qa_chain.stream(input_structure, config=runnable_config):
+            result += chunk["answer"]  
+            source_docs += chunk["source_documents"]
+        
+        # with get_openai_callback() as cb:
+        #     result = self.qa_chain({"question": user_input, "chat_history": chat_history})
+        return result, source_docs
+      
+      
 class VectorDB_gen():
     def __init__(self, config):
         self.config = config

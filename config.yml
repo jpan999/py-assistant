@@ -6,6 +6,7 @@ embedding_options:
   model : 'text-embedding-ada-002' # str
 llm: 'gpt-3.5-turbo' # str
 prompt_mode: 'Unrestricted' # str
+langchain_endpoint: "https://api.smith.langchain.com"
 splitter_options:
   use_splitter: True # bool
   remove_leftover_delimiters: True # bool

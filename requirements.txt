@@ -4,9 +4,10 @@ openai>=1.2
 duckduckgo-search
 anthropic>=0.3.0
 trubrics>=1.4.3
-streamlit-feedback
+streamlit-feedback==0.1.2
 boto3==1.28.57
 tiktoken
 faiss-cpu
 chromadb
 langchain_experimental
+langsmith==0.0.43

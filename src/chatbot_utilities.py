@@ -25,7 +25,7 @@ class LLMChatbot:
     
     def set_model(self, model_type):
         self.model_type = model_type
-        if model_type == "gpt-3.5-turbo":
+        if model_type.startswith("gpt-"):
             self.model = OpenAI(api_key=self.api_key)
         elif model_type == "claude-1.3":
             self.model = anthropic.Client(api_key=self.api_key)
@@ -62,7 +62,7 @@ class LLMChatbot:
     def get_user_intent(self, prompt):
         classification_prompt = f"Based on the user input, classify the user's intent. If the user does not mention he/she is a beginner to python, then search for keywords such as 'summarize', 'generate', 'translate' to detect user's intent. Is the user asking for code generation, code summarization, or code translation? "
 
-        if self.model_type == "gpt-3.5-turbo":
+        if self.model_type.startswith("gpt-"):
 
             response = self.model.chat.completions.create(model=self.model_type, messages=[
                 {"role": "system", "content": "I am a coding assistant capable of classifying user intent."},
@@ -92,7 +92,7 @@ class LLMChatbot:
         return intent
     
     def check_trans_suitability(self, prompt, target_language):
-        suitability_prompt = f"Check if the following code is suitable for translation to {target_language}: {prompt}. Specifically, please check for the code structure and dependencies. If suitable, please return 'suitable' as the answer. Else, please return an error message that contains 'not suitable' and states why it's not suitable."
+        suitability_prompt = f"Check if the following code is suitable for translation to {target_language}: {prompt}. Criteria for suitability include simplicity, clarity, and absence of highly Python-specific features. If suitable, please return 'suitable' as the answer. Else, please return an error message that contains 'not suitable' and explains your reasoning."
         response = self.model.chat.completions.create(model=self.model_type, messages=[
             {"role": "system", "content": "I am a coding assistant capable of translating Python code into other coding languages."},
             {"role": "user", "content": prompt},
@@ -118,7 +118,7 @@ class LLMChatbot:
         return suitable, suitability_response
 
     def get_reply(self, messages):
-        if self.model_type == "gpt-3.5-turbo":
+        if self.model_type.startswith("gpt-"):
             response = self.model.chat.completions.create(model=self.model_type, messages=messages)
             reply = response.choices[0].message.content
             print(reply)
