@@ -6,6 +6,7 @@ from langchain.prompts import PromptTemplate
 from langchain.memory import ConversationSummaryMemory, ConversationBufferMemory
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
 from langchain.callbacks import get_openai_callback
+from langchain.vectorstores import FAISS
 
 
 class VectorDB():
@@ -92,4 +93,60 @@ class VectorDB():
         # Query and Response
         with get_openai_callback() as cb:
             result = self.qa_chain({"question": user_input, "chat_history": chat_history})
+        return result
+
+
+class VectorDB_gen():
+    def __init__(self, config):
+        self.config = config
+        self.db_option = config['embedding_options']['db_option']
+        self.document_names = None
+
+    def create_embedding_function(self, openai_api_key : str):
+        self.embedding_function = OpenAIEmbeddings(
+            model=self.config['embedding_options']['model'],
+            show_progress_bar=True,
+            openai_api_key = openai_api_key) 
+    
+    def initialize_database(self, texts : list):
+        self.vector_db = FAISS.from_documents(texts, self.embedding_function)
+
+    def create_llm(self, model: str, llm_api_key : str, temperature : int):
+        # Instantiate the llm object 
+        if model == "gpt-3.5-turbo":
+            self.llm = ChatOpenAI(
+                            model_name=model,
+                            temperature=temperature,
+                            api_key=llm_api_key
+                        )
+        else:
+            self.llm = ChatAnthropic(model_name=model,
+                                     temperature=temperature,
+                                      anthropic_api_key=llm_api_key )
+    
+    def create_chain(self):
+
+        prompt_rag_template = """You are a proficient python developer. Respond with the syntactically correct code for to the question below. Make sure you follow these rules: \
+        1. Use context to understand the APIs and how to use it & apply. \
+        2. Do not add license information to the output code. \
+        3. Do not include colab code in the output. \
+        4. Ensure all the requirements in the question are met. \
+        Question: {question}
+        Context: {context}
+        Helpful Response : """
+
+        prompt_RAG_tempate = PromptTemplate(template=prompt_rag_template, input_variables=["context", "question"])
+
+        retriever = self.vector_db.as_retriever(
+                search_type="similarity",  
+                search_kwargs={"k": 2} 
+        )
+
+        self.qa_chain = RetrievalQA.from_llm(llm=self.llm, prompt=prompt_RAG_tempate, retriever=retriever, return_source_documents=True)
+    
+    def get_response(self, user_input : str):
+        # Query and Response
+        with get_openai_callback() as cb:
+            result = self.qa_chain({"query": user_input})
+            print(result)
         return result

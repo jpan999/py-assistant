@@ -86,6 +86,25 @@ class InfoLoader():
                 document_chunks = remove_delimiters(document_chunks)
             
             self.document_chunks_full.extend(document_chunks)
+
+
+class Gen_info_loader():
+    def __init__(self):
+        # Main list of all code strings
+        self.code_string_full = []
+        
+        chunk_size=2000
+        chunk_overlap=200
+
+        self.splitter = RecursiveCharacterTextSplitter.from_language(
+                language=Language.PYTHON,
+                chunk_size=chunk_size,
+                chunk_overlap=chunk_overlap)
+
+    def chunk_code_strings(self, code_strings):
+        self.code_string_full = self.splitter.split_documents(code_strings)
+        
+
             
             
 
