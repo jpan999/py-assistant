@@ -13,6 +13,9 @@ from src.components.vectorDB import VectorDB_gen
 from src.chatbot_utilities import LLMChatbot
 from crawl.extract_code_from_urls import get_code_strings
 from langchain.prompts import PromptTemplate
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
+from langchain.chat_models import ChatOpenAI
 warnings.filterwarnings("ignore")
 
 
@@ -39,7 +42,6 @@ warnings.filterwarnings("ignore")
 #     return Gen_info_loader(), VectorDB_gen(st.session_state.config)
 
 ###### Main Page #####
-
 with st.sidebar:
     api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     if "chatbot" not in st.session_state or api_key != st.session_state.chatbot.api_key:
@@ -62,7 +64,7 @@ mode_encode = {"✨ chat": 0, "♾️ file": 1}
 
 
 if mode_encode[input_mode] == 0:
-    
+
     chatbot = st.session_state.chatbot
 
     if "model" != st.session_state.get("model", None):
@@ -96,6 +98,7 @@ if mode_encode[input_mode] == 0:
                 st.chat_message("assistant").write(suitability_response + error_msg)
             
             else:
+
                 # Step 2: Append assistant message
                 with st.spinner('Generating answer...'):
 
