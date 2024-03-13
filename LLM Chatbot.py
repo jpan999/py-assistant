@@ -43,16 +43,24 @@ if prompt := st.chat_input():
     if not api_key:
         st.info("Please add your API key to continue.")
         st.stop()
+
     st.chat_message("user").write(prompt)
+
     try:
+            
         user_intent = chatbot.get_user_intent(prompt)
         if user_intent:
             st.chat_message("assistant").write(f"Based on your input, I identified your intent as: \n {user_intent}. Now I will proceed with the identified task.")
 
             reply = chatbot.generate_reply(prompt)
             st.chat_message("assistant").write(reply)
-        else:
-            st.chat_message("assistant").write("I'm not quite sure what you're asking for. Could you please clarify whether you need help with code generation, code summarization, or code translation? Alternatively, you can provide more details about your request.")
+        else: 
+            if chatbot.retrieve_beginner_status(prompt): # new to python
+                st.chat_message("assistant").write("Welcome to Python!")
+                reply = chatbot.generate_beginner_reply(prompt)
+                st.chat_message("assistant").write(reply)
+            else:
+                st.chat_message("assistant").write("I'm not quite sure what you're asking for. Could you please clarify whether you need help with code generation, code summarization, or code translation? Alternatively, you can provide more details about your request.")
     except openai.AuthenticationError:
         st.error("Please input a valid API key.")
     except Exception as e:
